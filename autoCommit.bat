@@ -4,7 +4,8 @@ echo type "commit" or "update"
 cd "D:\GitBatches"
 
 set GIT_PATH="C:\Program Files (x86)\Git\bin\git.exe"
-set BRANCH = "origin/master"
+set BRANCH = "origin/devleoper"
+
 
 :P
 set ACTION=
