@@ -19,4 +19,5 @@ if "%ACTION%"=="u" (
 	%GIT_PATH% pull %BRANCH%
 )
 if "%ACTION%"=="exit" exit /b
+
 goto P
