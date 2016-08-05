@@ -1,0 +1,22 @@
+@echo off
+rmdir /S /Q application_js_min
+rmdir /S /Q application_css_min
+mkdir application_js_min
+mkdir application_js_min\templates
+mkdir application_js_min\debug
+mkdir application_css_min
+mkdir application_css_min\img
+
+copy application_js\templates\*.* application_js_min\templates\
+for /f "delims=|" %%f in ('dir /b application_js\*.js' ) do java -jar yuicompressor-2.4.8.jar --type js -o application_js_min\%%f application_js\%%f
+copy application_js\*.js application_js_min\debug\
+
+copy application_css\img\*.* application_css_min\img\
+rem for /f "delims=|" %%f in ('dir /b application_css\*.css' ) do java -jar yuicompressor-2.4.8.jar --nomunge --type css -o application_css_min\%%f application_css\%%f
+copy application_css\*.* application_css_min\
+
+cd ..
+rmdir /S /Q application_js_min
+rmdir /S /Q application_css_min
+
+pause

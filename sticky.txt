@@ -1,0 +1,36 @@
+ MISCELLANEOUS NOTES
+1)If you wish to access child record thro parent use Plural name preceeded by __r e.g.
+SELECT Id,ATT_EXP__Latest_Version__c,(Select ATT_EXP__Version__c From ATT_EXP__Attachment_Versions__r) FROM ATT_EXP__Attachment__c
+0019000001BPPv5
+2)Always verify if script file is included twice
+3)Full screen image css
+body {
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+ $('body').css({ 'background': 'url(' + application_css + 'images/background.jpg) 100% 100% no-repeat fixed' });
+4)Use method to set custom parameter
+parentTask.set
+Ext.define.set(fieldName, value)
+
+5)angular.element('[ng-app]').injector().get('$reservation').makeReservation()
+$('.agentname').text().split(':')[1].trim()
+
+ 6)Hack for chatter profile recordtype delete
+https://na17.salesforce.com/setup/ui/profilerecordtypeedit.jsp?id=00eo00000012xmM&tid=01Io0000001C3TE&pn=Chatter+Moderate+User
+
+
+
+
+
+4K)n46E08$$F)XGg
+developer@attachments.expert
+
+ExtJs 4.1 commercial version and Bryntum Gantt-2.1.15
