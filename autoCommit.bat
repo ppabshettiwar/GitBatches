@@ -1,5 +1,4 @@
 @echo off
-echo type "c" or "u"
 
 cd "D:\GitBatches"
 
@@ -12,6 +11,7 @@ set /p Comment="Comment: "
 set ACTION=
 set /P ACTION=Action: %=%
 if "%ACTION%"=="c" (
+	
 	%GIT_PATH%  add -A
 	%GIT_PATH%  pull origin devleoper
 	%GIT_PATH% commit -m "%Comment%"
