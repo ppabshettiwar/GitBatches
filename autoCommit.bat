@@ -5,6 +5,7 @@ cd "D:\GitBatches"
 
 set GIT_PATH="C:\Program Files (x86)\Git\bin\git.exe"
 set BRANCH = "origin/devleoper"
+set MASTERBRANCH = "origin/master"
 set 
 
 :P
@@ -14,7 +15,8 @@ if "%ACTION%"=="c" (
   %GIT_PATH% add -A
 	%GIT_PATH% commit -am "Auto-committed on master from dev on %date% by my batch file"
 	%GIT_PATH% pull %BRANCH%
-	%GIT_PATH% push "origin/master"
+	%GIT_PATH% config --global push.default simple
+	%GIT_PATH% push %MASTERBRANCH%
 )
 if "%ACTION%"=="u" (
 	%GIT_PATH% pull %BRANCH%
