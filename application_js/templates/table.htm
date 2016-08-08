@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<style>
+		body {
+			font-family: Arial,Helvetica,sans-serif;
+			font-size: 75%;
+		}
+
+		table.responsive {
+			margin: 1em 0;
+			overflow: hidden;
+		}
+
+			table.responsive th {
+				display: none;
+				text-align: left;
+				margin: .5em 1em;
+			}
+
+			table.responsive td {
+				display: block;
+				text-align: left;
+				margin: .5em 1em;
+			}
+
+				table.responsive td:first-child {
+					padding-top: .5em;
+				}
+
+				table.responsive td:last-child {
+					padding-bottom: .5em;
+				}
+
+				table.responsive td:before {
+					content: attr(data-th) "";
+					font-weight: bold;
+					display: block;
+				}
+
+		@media (min-width: 480px) {
+			table.responsive td:before {
+				display: none;
+			}
+
+			table.responsive th, table.responsive td {
+				display: table-cell;
+				padding: .25em .5em;
+			}
+
+				table.responsive th:first-child, table.responsive td:first-child {
+					padding-left: 0;
+				}
+
+				table.responsive th:last-child, table.responsive td:last-child {
+					padding-right: 0;
+				}
+		}
+	</style>
+</head>
+<body>
+	<h1>RWD List to Table</h1>
+	<table class="responsive">
+		<tr>
+			<th>Movie Title</th>
+			<th>Genre</th>
+			<th>Year</th>
+			<th>Gross</th>
+		</tr>
+		<tr>
+			<td data-th="Movie Title">Star Wars</td>
+			<td data-th="Genre">Adventure, Sci-fi</td>
+			<td data-th="Year">1977</td>
+			<td data-th="Gross">$460,935,665</td>
+		</tr>
+		<tr>
+			<td data-th="Movie Title">Howard The Duck</td>
+			<td data-th="Genre">"Comedy"</td>
+			<td data-th="Year">1986</td>
+			<td data-th="Gross">$16,295,774</td>
+		</tr>
+		<tr>
+			<td data-th="Movie Title">American Graffiti</td>
+			<td data-th="Genre">Comedy, Drama</td>
+			<td data-th="Year">1973</td>
+			<td data-th="Gross">$115,000,000</td>
+		</tr>
+	</table>
+</body>
+</html>
