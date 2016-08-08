@@ -22,6 +22,7 @@ if "%ACTION%"=="c" (
 	%GIT_PATH% merge devleoper
 	%GIT_PATH% push %MASTERBRANCH%
  	
+	%GIT_PATH% checkout devleoper
 )
 if "%ACTION%"=="u" (
 	%GIT_PATH% pull %BRANCH%
