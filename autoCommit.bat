@@ -8,12 +8,13 @@ set BRANCH = "devleoper"
 set MASTERBRANCH = "origin/master"
 
 :P
+set /p Comment="Comment: "
 set ACTION=
 set /P ACTION=Action: %=%
 if "%ACTION%"=="c" (
 	%GIT_PATH%  add -A
 	%GIT_PATH%  pull origin devleoper
-	%GIT_PATH% commit -am "Auto commit on dev by  bat file"
+	%GIT_PATH% commit -m "%Comment%"
 	%GIT_PATH% push origin devleoper
 
 	%GIT_PATH% checkout master
