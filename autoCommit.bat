@@ -15,11 +15,11 @@ if "%ACTION%"=="c" (
 	%GIT_PATH%  add -A
 	%GIT_PATH%  pull origin devleoper
 	%GIT_PATH% commit -am "Auto-committed on  dev on %date% by my batch file"
-	%GIT_PATH% push %BRANCH%
+	%GIT_PATH% push origin devleoper
 
 	%GIT_PATH% checkout master
 	%GIT_PATH% pull %MASTERBRANCH%
-	%GIT_PATH% merge %BRANCH%
+	%GIT_PATH% merge devleoper
 	%GIT_PATH% push %MASTERBRANCH%
  	
 )
