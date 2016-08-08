@@ -28,13 +28,19 @@ mkdir application_css_min\img
 	
 	set /p Comment="Enter  Comment to commit: "
 	cd..	
-	%GIT_PATH% checkout master
-	%GIT_PATH% pull %MASTERBRANCH%
-	%GIT_PATH% merge devleoper
-	%GIT_PATH% push %MASTERBRANCH%
+:P
+	set ACTION=
+	set /P ACTION=Action: %=%
+	if "%ACTION%"=="c" (
+		%GIT_PATH% checkout master
+		%GIT_PATH% pull %MASTERBRANCH%
+		%GIT_PATH% merge devleoper
+		%GIT_PATH% push %MASTERBRANCH%
  	
-	%GIT_PATH% checkout devleoper
-	rmdir /S /Q application_js_min
-	rmdir /S /Q application_css_min
-
-pause
+		%GIT_PATH% checkout devleoper
+		rmdir /S /Q application_js_min
+		rmdir /S /Q application_css_min
+	)
+	
+	if "%ACTION%"=="e" exit /b
+	goto P
