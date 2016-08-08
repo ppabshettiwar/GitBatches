@@ -12,7 +12,7 @@ set
 set ACTION=
 set /P ACTION=Action: %=%
 if "%ACTION%"=="c" (
-  %GIT_PATH% add -A
+
 	
 	%GIT_PATH% checkout %MASTERBRANCH%
 	%GIT_PATH% pull %MASTERBRANCH%
