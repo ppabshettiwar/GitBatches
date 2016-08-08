@@ -19,6 +19,7 @@ if "%ACTION%"=="c" (
 
 	%GIT_PATH% checkout %MASTERBRANCH%
 	%GIT_PATH% status
+	echo on master
 	%GIT_PATH% pull %MASTERBRANCH%
 	%GIT_PATH% merge %BRANCH%
 	%GIT_PATH% commit -am "Auto-committed merged code %date% by my batch file"
