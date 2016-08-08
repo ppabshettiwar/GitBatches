@@ -12,8 +12,11 @@ set
 set ACTION=
 set /P ACTION=Action: %=%
 if "%ACTION%"=="c" (
+	%GIT_PATH%  add -a
+	%GIT_PATH%  pull %BRANCH%
+	%GIT_PATH% commit -am "Auto-committed on  dev on %date% by my batch file"
+	%GIT_PATH% push %BRANCH%
 
-	
 	%GIT_PATH% checkout %MASTERBRANCH%
 	%GIT_PATH% pull %MASTERBRANCH%
 	%GIT_PATH% merge %BRANCH%
