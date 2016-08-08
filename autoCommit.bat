@@ -15,11 +15,10 @@ if "%ACTION%"=="c" (
   %GIT_PATH% add -A
 	
 	%GIT_PATH% checkout %MASTERBRANCH%
-	%GIT_PATH% config merge.defaultToUpstream true
+	%GIT_PATH% pull %MASTERBRANCH%
 	%GIT_PATH% merge %BRANCH%
 	%GIT_PATH% push %MASTERBRANCH%
  	
-	
 )
 if "%ACTION%"=="u" (
 	%GIT_PATH% pull %BRANCH%
