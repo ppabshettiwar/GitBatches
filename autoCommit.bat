@@ -18,7 +18,6 @@ if "%ACTION%"=="c" (
 	%GIT_PATH% push %BRANCH%
 
 	%GIT_PATH% checkout %MASTERBRANCH%
-	%GIT_PATH% status
 	echo on master
 	%GIT_PATH% pull %MASTERBRANCH%
 	%GIT_PATH% merge %BRANCH%
