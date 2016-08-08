@@ -16,8 +16,8 @@ if "%ACTION%"=="c" (
 	
 	%GIT_PATH% checkout %MASTERBRANCH%
 	%GIT_PATH% merge %BRANCH%
-	%GIT_PATH% push
- 	%GIT_PATH% commit -am "Auto-committed on master from dev on %date% by my batch file"
+	%GIT_PATH% push %MASTERBRANCH%
+ 	
 	
 )
 if "%ACTION%"=="u" (
