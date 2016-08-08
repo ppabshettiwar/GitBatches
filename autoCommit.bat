@@ -5,9 +5,9 @@ cd "D:\GitBatches"
 set GIT_PATH="C:\Program Files (x86)\Git\bin\git.exe"
 set BRANCH = "devleoper"
 set MASTERBRANCH = "origin/master"
-
+set /p Comment="Enter  Comment to commit: "
 :P
-set /p Comment="Comment: "
+
 set ACTION=
 set /P ACTION=Action: %=%
 if "%ACTION%"=="c" (
@@ -27,5 +27,5 @@ if "%ACTION%"=="c" (
 if "%ACTION%"=="u" (
 	%GIT_PATH% pull %BRANCH%
 )
-if "%ACTION%"=="exit" exit /b
+if "%ACTION%"=="e" exit /b
 goto P
