@@ -38,8 +38,13 @@ mkdir application_css_min\img
 		%GIT_PATH% push %MASTERBRANCH%
  	
 		%GIT_PATH% checkout devleoper
-		rmdir /S /Q application_js_min
-		rmdir /S /Q application_css_min
+		cd application_js
+		%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
+
+		cd..
+		cd application_css
+		%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
+		
 	)
 	
 	if "%ACTION%"=="e" exit /b
