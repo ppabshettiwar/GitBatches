@@ -38,8 +38,7 @@ mkdir application_css_min\img
 		%GIT_PATH% push %MASTERBRANCH%
  	
 		%GIT_PATH% checkout devleoper
-		rmdir /S /Q application_js_min
-		rmdir /S /Q application_css_min
+		
 	)
 	
 	if "%ACTION%"=="e" exit /b
