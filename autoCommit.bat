@@ -15,6 +15,7 @@ if "%ACTION%"=="c" (
   %GIT_PATH% add -A
 	
 	%GIT_PATH% checkout %MASTERBRANCH%
+	%GIT_PATH% config merge.defaultToUpstream true
 	%GIT_PATH% merge %BRANCH%
 	%GIT_PATH% push %MASTERBRANCH%
  	
