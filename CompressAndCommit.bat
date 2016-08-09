@@ -28,7 +28,7 @@ mkdir application_css_min\img
 	
 	set /p Comment="Enter Comment to commit: "
 	::cd..	
-:P
+	:P
 	set ACTION=
 	set /P ACTION=Action: %=%
 	if "%ACTION%"=="c" (
