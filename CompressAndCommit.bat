@@ -37,10 +37,12 @@ mkdir application_css_min\img
 		%GIT_PATH% merge --no-commit --no-ff devleoper
 		%GIT_PATH% reset -- /application_js 
 		%GIT_PATH% reset -- /application_css 
-		%GIT_PATH% commit -m "Auto merged by my batch file on %date%"
+		%GIT_PATH% commit -m "%Comment%"
 		%GIT_PATH% push %MASTERBRANCH%
  	
 		%GIT_PATH% checkout devleoper
+		rmdir /S /Q application_js_min
+		rmdir /S /Q application_css_min
 		::cd application_js
 		::%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
 
