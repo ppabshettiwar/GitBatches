@@ -35,9 +35,10 @@ mkdir application_css_min\img
 		%GIT_PATH% pull %MASTERBRANCH%
 		echo pulled master
 		%GIT_PATH% merge --no-commit --no-ff devleoper
-		echo Merging....
+		echo Merging
 		%GIT_PATH% reset -- /application_js 
 		%GIT_PATH% reset -- /application_css 
+		%GIT_PATH% add -A
 		%GIT_PATH% commit -m "%Comment%"
 		%GIT_PATH% push %MASTERBRANCH%
  	
