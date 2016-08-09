@@ -28,11 +28,9 @@ mkdir application_css_min\img
 	
 	set /p Comment="Enter Comment to commit: "
 	::cd..	
-	:P
-	set ACTION=
-	set /P ACTION=Action: %=%
-	if "%ACTION%"=="c" (
-		echo checking out master...
+	
+
+		echo checking out master
 		%GIT_PATH% checkout master
 		%GIT_PATH% status
 		%GIT_PATH% pull %MASTERBRANCH%
@@ -54,7 +52,6 @@ mkdir application_css_min\img
 		::cd application_css
 		::%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
 		
-	)
 	
-	if "%ACTION%"=="e" exit /b
-	goto P
+	
+	
