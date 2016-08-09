@@ -29,8 +29,7 @@ mkdir application_css_min\img
 	set /p Comment="Enter Comment to commit: "
 	::cd..	
 	
-
-		echo checking out master
+		%GIT_PATH% status
 		%GIT_PATH% checkout master
 		%GIT_PATH% status
 		%GIT_PATH% pull %MASTERBRANCH%
