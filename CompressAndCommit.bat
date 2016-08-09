@@ -19,33 +19,39 @@ mkdir application_css_min\img
 		rem for /f "delims=|" %%f in ('dir /b application_css\*.css' ) do java -jar yuicompressor-2.4.8.jar --nomunge --type css -o application_css_min\%%f application_css\%%f
 	copy application_css\*.* application_css_min\
 
-	cd application_js
-	%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --assume-unchanged
+	::cd application_js
+	::%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --assume-unchanged
 
-	cd..
-	cd application_css
-	%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --assume-unchanged
+	::cd..
+	::cd application_css
+	::%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --assume-unchanged
 	
-	set /p Comment="Enter  Comment to commit: "
-	cd..	
-:P
-	set ACTION=
-	set /P ACTION=Action: %=%
-	if "%ACTION%"=="c" (
+	set /p Comment="Enter Comment to commit: "
+	::cd..	
+	
+
+		echo checking out master
 		%GIT_PATH% checkout master
+		%GIT_PATH% status
 		%GIT_PATH% pull %MASTERBRANCH%
-		%GIT_PATH% merge devleoper
+		echo pulled master
+		%GIT_PATH% merge --no-commit --no-ff devleoper
+		echo Merging....
+		%GIT_PATH% reset -- /application_js 
+		%GIT_PATH% reset -- /application_css 
+		%GIT_PATH% commit -m "%Comment%"
 		%GIT_PATH% push %MASTERBRANCH%
  	
 		%GIT_PATH% checkout devleoper
-		cd application_js
-		%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
+		rmdir /S /Q application_js_min
+		rmdir /S /Q application_css_min
+		::cd application_js
+		::%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
 
-		cd..
-		cd application_css
-		%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
+		::cd..
+		::cd application_css
+		::%GIT_PATH% ls-files -z | xargs -0 %GIT_PATH% update-index --no-assume-unchanged
 		
-	)
 	
-	if "%ACTION%"=="e" exit /b
-	goto P
+	
+	
